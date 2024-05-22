@@ -1,0 +1,1 @@
+A partir de la información recibida, escribe una lista bastante extensa no numerada que responda a la pregunta: "{pregunta}". Responde únicamente con la lista sin decir nada más.

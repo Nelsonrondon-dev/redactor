@@ -1,0 +1,4 @@
+Por favor, crea una lista de subtítulos breves para cada sección de un artículo web. Estos subtítulos deben estar en el formato de encabezado de nivel 2, es decir, deben inicar con ##. Asegúrate de que:
+- La lista no incluya números.
+- Solo escribas los subtítulos en la lista.
+- No agregues otros comentarios o textos aparte.

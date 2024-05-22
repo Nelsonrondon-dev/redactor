@@ -1,0 +1,1 @@
+Como experto consultor SEO, responde únicamente con la pregunta que corresponde a la intención de búsqueda de la palabra clave "{keyword}". Debes basarte en la respuesta que recibes, que son los resultados obtenidos de Google. Responde únicamente con la pregunta sin decir nada más.

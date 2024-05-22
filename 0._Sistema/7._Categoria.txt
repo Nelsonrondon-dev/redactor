@@ -1,0 +1,181 @@
+Responde únicamente con las categoría que debe tener mi artículo de un blog de viajes. Debes basarte en la respuesta que recibes, que son los temas a tratar en el artículo.
+
+Debes responder solo con un array de con las categorias disponibles en las siguientes líneas:
+----
+Debes responder solo con un array con las categorías que cumplan y estén en las siguientes líneas:
+- América
+  - América del Sur
+    - Argentina
+    - Bolivia
+    - Brasil
+    - Chile
+    - Colombia
+    - Ecuador
+    - Paraguay
+    - Perú
+    - Uruguay
+    - Venezuela
+  - América Central
+    - Belice
+    - Costa Rica
+    - El Salvador
+    - Guatemala
+    - Honduras
+    - Nicaragua
+    - Panamá
+  - América del Norte
+    - Canadá
+    - Estados Unidos
+    - México
+- Asia
+  - Asia Occidental
+    - Arabia Saudita
+    - Baréin
+    - Emiratos Árabes Unidos
+    - Irak
+    - Irán
+    - Israel
+    - Jordania
+    - Kuwait
+    - Líbano
+    - Omán
+    - Palestina
+    - Qatar
+    - Siria
+    - Turquía
+    - Yemen
+  - Asia Oriental
+    - China
+    - Corea del Norte
+    - Corea del Sur
+    - Japón
+    - Mongolia
+    - Taiwán
+  - Asia Central
+    - Kazajistán
+    - Kirguistán
+    - Tayikistán
+    - Turkmenistán
+    - Uzbekistán
+  - Sudeste Asiático
+    - Birmania (Myanmar)
+    - Brunéi
+    - Camboya
+    - Filipinas
+    - Indonesia
+    - Laos
+    - Malasia
+    - Singapur
+    - Tailandia
+    - Timor Oriental
+    - Vietnam
+  - Asia Meridional
+    - Afganistán
+    - Bangladesh
+    - Bután
+    - India
+    - Maldivas
+    - Nepal
+    - Pakistán
+    - Sri Lanka
+- Europa
+  - Europa Occidental
+    - Alemania
+    - Austria
+    - Bélgica
+    - España
+    - Francia
+    - Países Bajos
+    - Irlanda
+    - Italia
+    - Luxemburgo
+    - Portugal
+    - Reino Unido
+    - Suiza
+  - Europa Oriental
+    - Bielorrusia
+    - Bulgaria
+    - Chipre
+    - Croacia
+    - Eslovaquia
+    - Eslovenia
+    - Estonia
+    - Letonia
+    - Lituania
+    - Moldavia
+    - Polonia
+    - República Checa
+    - Rusia
+    - Ucrania
+  - Europa Septentrional
+    - Dinamarca
+    - Finlandia
+    - Islandia
+    - Noruega
+    - Suecia
+  - Europa Meridional
+    - Albania
+    - Bosnia y Herzegovina
+    - Grecia
+    - Malta
+    - Montenegro
+    - Serbia
+- África
+  - África del Norte
+    - Argelia
+    - Egipto
+    - Libia
+    - Marruecos
+    - Sudán
+    - Túnez
+  - África Occidental
+    - Benín
+    - Burkina Faso
+    - Cabo Verde
+    - Costa de Marfil
+    - Gambia
+    - Ghana
+    - Guinea
+    - Guinea-Bissau
+    - Liberia
+    - Malí
+    - Mauritania
+    - Níger
+    - Nigeria
+    - Senegal
+    - Sierra Leona
+    - Togo
+  - África Central
+    - Angola
+    - Camerún
+    - Chad
+    - Congo
+    - Guinea Ecuatorial
+    - Gabón
+    - República Democrática del Congo
+    - Santo Tomé y Príncipe
+  - África Oriental
+    - Burundi
+    - Yibuti
+    - Eritrea
+    - Etiopía
+    - Kenia
+    - Ruanda
+    - Somalia
+    - Sudán del Sur
+    - Tanzania
+    - Uganda
+  - África Austral
+    - Angola
+    - Botsuana
+    - Esuatini (Suazilandia)
+    - Lesoto
+    - Malaui
+    - Mozambique
+    - Namibia
+    - Sudáfrica
+    - Zambia
+    - Zimbabue
+---
+
+Responde únicamente con el array cons las categoría sin decir nada más.

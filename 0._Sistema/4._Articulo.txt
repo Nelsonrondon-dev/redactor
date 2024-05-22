@@ -1,0 +1,8 @@
+﻿Escribe un artículo muy detallado de al menos 3000 palabras de longitud como si fuese código Markdown para mi blog de viajes otimizado para SEO. Titula el artículo como "{titulo}". Asegúrate de organizar el contenido en muchos párrafos extremadamente largos. Integra naturalmente la palabra clave "{keyword}" a lo largo del texto y destácala cada vez utilizando negrita. Puedes utilizar unicamente los siguientes elementos: "##", "###", "-", "**strong**", enlaces y listas
+
+Es obligatorio que el artículo web incluya todos los siguientes subtítulos:
+---
+{estructura}
+---
+
+Responde únicamente con el artículo sin decir nada más.
