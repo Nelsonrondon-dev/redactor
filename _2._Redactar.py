@@ -24,37 +24,37 @@ def load_component(file_path):
         return file.read().strip()
 
 # Cargar componentes de conversación y contenido
-pregunta_sistema = load_component("0.Sistema/0.Pregunta.txt")
-pregunta_usuario = load_component("1.Usuario/0.Pregunta.txt")
-pregunta_asistente = load_component("2.Asistente/0.Pregunta.txt")
+pregunta_sistema = load_component("0._Sistema/0.Pregunta.txt")
+pregunta_usuario = load_component("1._Usuario/0.Pregunta.txt")
+pregunta_asistente = load_component("2._Asistente/0.Pregunta.txt")
 
-titulo_sistema = load_component("0.Sistema/1.Titulo.txt")
-titulo_usuario = load_component("1.Usuario/1.Titulo.txt")
-titulo_asistente = load_component("2.Asistente/1.Titulo.txt")
+titulo_sistema = load_component("0._Sistema/1.Titulo.txt")
+titulo_usuario = load_component("1._Usuario/1.Titulo.txt")
+titulo_asistente = load_component("2._Asistente/1.Titulo.txt")
 
-investigacion_sistema = load_component("0.Sistema/2.Investigacion.txt")
-investigacion_usuario = load_component("1.Usuario/2.Investigacion.txt")
-investigacion_asistente = load_component("2.Asistente/2.Investigacion.txt")
+investigacion_sistema = load_component("0._Sistema/2.Investigacion.txt")
+investigacion_usuario = load_component("1._Usuario/2.Investigacion.txt")
+investigacion_asistente = load_component("2._Asistente/2.Investigacion.txt")
 
-estructura_sistema = load_component("0.Sistema/3.Estructura.txt")
-estructura_usuario = load_component("1.Usuario/3.Estructura.txt")
-estructura_asistente = load_component("2.Asistente/3.Estructura.txt")
+estructura_sistema = load_component("0._Sistema/3.Estructura.txt")
+estructura_usuario = load_component("1._Usuario/3.Estructura.txt")
+estructura_asistente = load_component("2._Asistente/3.Estructura.txt")
 
-articulo_sistema = load_component("0.Sistema/4.Articulo.txt")
-articulo_usuario = load_component("1.Usuario/4.Articulo.txt")
-articulo_asistente = load_component("2.Asistente/4.Articulo.txt")
+articulo_sistema = load_component("0._Sistema/4.Articulo.txt")
+articulo_usuario = load_component("1._Usuario/4.Articulo.txt")
+articulo_asistente = load_component("2._Asistente/4.Articulo.txt")
 
-descripcion_sistema = load_component("0.Sistema/5.Descripcion.txt")
-descripcion_usuario = load_component("1.Usuario/5.Descripcion.txt")
-descripcion_asistente = load_component("2.Asistente/5.Descripcion.txt")
+descripcion_sistema = load_component("0._Sistema/5.Descripcion.txt")
+descripcion_usuario = load_component("1._Usuario/5.Descripcion.txt")
+descripcion_asistente = load_component("2._Asistente/5.Descripcion.txt")
 
-imagen_sistema = load_component("0.Sistema/6.Imagen.txt")
-imagen_usuario = load_component("1.Usuario/6.Imagen.txt")
-imagen_asistente = load_component("2.Asistente/6.Imagen.txt")
+imagen_sistema = load_component("0._Sistema/6.Imagen.txt")
+imagen_usuario = load_component("1._Usuario/6.Imagen.txt")
+imagen_asistente = load_component("2._Asistente/6.Imagen.txt")
 
-categoria_sistema = load_component("0.Sistema/7.Categoria.txt")
-categoria_usuario = load_component("1.Usuario/7.Categoria.txt")
-categoria_asistente = load_component("2.Asistente/7.Categoria.txt")
+categoria_sistema = load_component("0._Sistema/7.Categoria.txt")
+categoria_usuario = load_component("1._Usuario/7.Categoria.txt")
+categoria_asistente = load_component("2._Asistente/7.Categoria.txt")
 
 # Variables globales
 total_keywords = len(keywords)
