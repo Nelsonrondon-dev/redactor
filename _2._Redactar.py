@@ -1,5 +1,4 @@
 import csv
-from openai import OpenAI
 import re
 import concurrent.futures
 import threading
@@ -8,8 +7,9 @@ import os
 from unidecode import unidecode
 from newspaper import Article
 import slugify
+import openai
 
-openai = OpenAI(api_key="temp")
+openai.api_key = "temp"
 
 # Leer las API keys de archivos de texto
 with open("0._ValueSERP.txt", "r", encoding="utf-8") as file:
@@ -98,7 +98,7 @@ def chatGPT(sistema, usuario, asistente):
         api_openai_actual = (api_openai_actual + 1) % len(apis_openai)
         openai.api_key = apis_openai[api_openai_actual]
         try:
-            respuesta = openai.chat.completions.create(
+            respuesta = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo-16k",
                 messages=[
                     {"role": "system", "content": sistema},
@@ -107,10 +107,11 @@ def chatGPT(sistema, usuario, asistente):
                 ],
                 temperature=0.1
             )
-            content = respuesta.choices[0].message.content
+            content = respuesta.choices[0].message['content']
             content_strip = content.strip()
             return content_strip
-        except Exception:
+        except Exception as e:
+            print(f"Error en chatGPT: {e}")
             pass
 
 # Función para crear una pregunta
