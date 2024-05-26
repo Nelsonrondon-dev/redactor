@@ -71,13 +71,13 @@ def validarOpenAI(usuario: str, clave: str) -> bool:
     for intento in range(3):
         try:
             openai.api_key = clave
-            openai.ChatCompletion.create(
+            response = openai.ChatCompletion.create(
                 model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": usuario}]
             )
             print(f"OpenAI {clave[:6]}: Correcta")
             return True
-        except Exception as e:
+        except openai.error.OpenAIError as e:
             print(f"OpenAI {clave[:6]}: Error {intento + 1}/{3}: {e}")
     return False
 
