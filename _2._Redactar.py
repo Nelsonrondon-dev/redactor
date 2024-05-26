@@ -7,6 +7,7 @@ import requests
 import os
 from unidecode import unidecode
 from newspaper import Article
+import slugify
 
 openai = OpenAI(api_key="temp")
 
@@ -139,7 +140,7 @@ def crear_estructura(pregunta, titulo, investigacion):
 
 # Función para crear el artículo
 def crear_articulo(titulo, keyword, estructura, investigacion):
-    articulo =  chatGPT(articulo_sistema.format(titulo=titulo, keyword=keyword, estructura=estructura), articulo_usuario.format(investigacion=investigacion), articulo_asistente.format(titulo=titulo))
+    articulo = chatGPT(articulo_sistema.format(titulo=titulo, keyword=keyword, estructura=estructura), articulo_usuario.format(investigacion=investigacion), articulo_asistente.format(titulo=titulo))
     articulo = articulo.replace(".</h", "</h")
     articulo = articulo.replace(":</h", "</h")
     articulo = articulo.replace("# Introducción", "")
@@ -172,7 +173,7 @@ def crear_imagen(estructura):
 # Función para crear la categoría
 def crear_categoria(estructura):
     categoria = chatGPT(categoria_sistema, categoria_usuario.format(estructura=estructura), categoria_asistente)
-    categoria = unidecode(categoria) 
+    categoria = unidecode(categoria)
     categoria = categoria.replace("\"", "").rstrip(".")
     return categoria
 
@@ -189,9 +190,15 @@ def leer_keywords_existentes(nombre_archivo):
 # Función para guardar el resultado en un archivo MDX
 def guardar_resultado_en_markdown(titulo, resultado):
     slug = slugify.slugify(titulo)
-    archivo_md = f"resultados_markdown/{slug}.mdx"
-    with open(archivo_md, "w", encoding="utf-8") as md_file:
-        md_file.write(resultado)
+    directorio = "resultados_markdown"
+    if not os.path.exists(directorio):
+        os.makedirs(directorio)
+    archivo_md = f"{directorio}/{slug}.mdx"
+    try:
+        with open(archivo_md, "w", encoding="utf-8") as md_file:
+            md_file.write(resultado)
+    except IOError as e:
+        print(f"Error al guardar el archivo {archivo_md}: {e}")
 
 # Función principal para procesar una keyword
 def procesar_keyword(keyword):
