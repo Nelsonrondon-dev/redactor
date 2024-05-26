@@ -13,14 +13,19 @@ bloqueo = threading.Lock()
 class ManejadorArchivoClaves:
     @staticmethod
     def leer_claves(nombre_archivo: str) -> set:
+        print(f"Leyendo claves desde {nombre_archivo}...")
         with open(nombre_archivo, "r", encoding="utf-8") as archivo:
-            return {linea.strip() for linea in archivo}
+            claves = {linea.strip() for linea in archivo}
+        print(f"Claves leídas: {claves}")
+        return claves
     
     @staticmethod
     def escribir_claves(nombre_archivo: str, claves: set):
+        print(f"Escribiendo claves en {nombre_archivo}...")
         with open(nombre_archivo, "w", encoding="utf-8") as archivo:
             for clave in claves:
                 archivo.write(clave + "\n")
+        print(f"Claves escritas: {claves}")
 
 # Clase para validar claves
 class ValidadorClaves:
@@ -38,6 +43,7 @@ class ValidadorClaves:
         def validar_clave(clave):
             if not self.validador(self.consulta_prueba, clave):
                 with bloqueo:
+                    print(f"Descartando clave inválida: {clave}")
                     self.claves.discard(clave)
         
         # Validación de claves en paralelo utilizando ThreadPoolExecutor
@@ -54,8 +60,10 @@ def validarValueSERP(consulta: str, clave: str) -> bool:
                 if resultados:
                     print(f"ValueSerp {clave[:3]}: Correcta")
                     return True
+            else:
+                print(f"ValueSerp {clave[:3]}: Status code {respuesta.status_code}")
         except Exception as e:
-            print(f"ValueSerp {clave[:3]}: Error {intento + 1}/{3}.")
+            print(f"ValueSerp {clave[:3]}: Error {intento + 1}/{3}: {e}")
     return False
 
 # Función para validar claves de OpenAI
@@ -70,11 +78,16 @@ def validarOpenAI(usuario: str, clave: str) -> bool:
             print(f"OpenAI {clave[:6]}: Correcta")
             return True
         except Exception as e:
-            print(f"OpenAI {clave[:6]}: Error {intento + 1}/{3}.")
+            print(f"OpenAI {clave[:6]}: Error {intento + 1}/{3}: {e}")
     return False
 
 # Instancias de validadores y ejecución
+print("Iniciando validación de claves OpenAI...")
 validador_openai = ValidadorClaves(ARCHIVO_OPENAI, validarOpenAI, "hola")
 validador_openai.ejecutar()
+print("Validación de claves OpenAI completada.")
+
+print("Iniciando validación de claves ValueSERP...")
 validador_valueserp = ValidadorClaves(ARCHIVO_VALUESERP, validarValueSERP, "hola")
 validador_valueserp.ejecutar()
+print("Validación de claves ValueSERP completada.")
