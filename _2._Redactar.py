@@ -112,9 +112,10 @@ def chatGPT(sistema, usuario, asistente):
     while True:
         api_openai_actual = (api_openai_actual + 1) % len(apis_openai)
         openai.api_key = apis_openai[api_openai_actual]
+        print(openai.api_key)
         try:
             respuesta = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo-0125",
+                model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": sistema},
                     {"role": "user", "content": usuario},
@@ -122,6 +123,7 @@ def chatGPT(sistema, usuario, asistente):
                 ],
                 temperature=0.1
             )
+            print(respuesta)
             content = respuesta.choices[0].message['content']
             content_strip = content.strip()
             print("Conversación con OpenAI completada")
