@@ -122,7 +122,6 @@ def chatGPT(sistema, usuario, asistente):
                 ],
                 temperature=0.1
             )
-            print(respuesta)
             content = respuesta.choices[0].message['content']
             content_strip = content.strip()
             print("Conversación con OpenAI completada")
