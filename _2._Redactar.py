@@ -126,7 +126,7 @@ def chatGPT(sistema, usuario, asistente):
             print("Respuesta completa de la API:", respuesta)
             
             # Acceder al contenido de la respuesta
-            content = respuesta.choices[0].message['content']
+            content = respuesta.choices[0].message.content
             content_strip = content.strip()
             print("Conversación con OpenAI completada")
             print("Contenido recibido:", content_strip)
