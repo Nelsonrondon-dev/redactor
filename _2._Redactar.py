@@ -112,9 +112,8 @@ def chatGPT(sistema, usuario, asistente):
     while True:
         api_openai_actual = (api_openai_actual + 1) % len(apis_openai)
         openai.api_key = apis_openai[api_openai_actual]
-        print(openai.api_key)
         try:
-            respuesta = openai.ChatCompletion.create(
+            respuesta = openai.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": sistema},
