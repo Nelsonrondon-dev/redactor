@@ -122,9 +122,14 @@ def chatGPT(sistema, usuario, asistente):
                 ],
                 temperature=0.1
             )
+            # Imprimir la respuesta completa para depuración
+            print("Respuesta completa de la API:", respuesta)
+            
+            # Acceder al contenido de la respuesta
             content = respuesta.choices[0].message['content']
             content_strip = content.strip()
             print("Conversación con OpenAI completada")
+            print("Contenido recibido:", content_strip)
             return content_strip
         except openai.error.OpenAIError as e:
             print(f"Error en chatGPT: {e}")
