@@ -99,7 +99,7 @@ def chatGPT(sistema, usuario, asistente):
         openai.api_key = apis_openai[api_openai_actual]
         try:
             respuesta = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo-16k",
+                model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": sistema},
                     {"role": "user", "content": usuario},
@@ -110,7 +110,7 @@ def chatGPT(sistema, usuario, asistente):
             content = respuesta.choices[0].message['content']
             content_strip = content.strip()
             return content_strip
-        except Exception as e:
+        except openai.error.OpenAIError as e:
             print(f"Error en chatGPT: {e}")
             pass
 
