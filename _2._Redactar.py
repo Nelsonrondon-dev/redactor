@@ -115,7 +115,7 @@ def chatGPT(sistema, usuario, asistente):
         openai.api_key = apis_openai[api_openai_actual]
         try:
             respuesta = openai.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": sistema},
                     {"role": "user", "content": usuario},
