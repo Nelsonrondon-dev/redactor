@@ -8,6 +8,7 @@ from unidecode import unidecode
 from newspaper import Article
 import slugify
 import openai
+from datetime import datetime
 
 openai.api_key = "temp"
 
@@ -114,7 +115,7 @@ def chatGPT(sistema, usuario, asistente):
         openai.api_key = apis_openai[api_openai_actual]
         try:
             respuesta = openai.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=[
                     {"role": "system", "content": sistema},
                     {"role": "user", "content": usuario},
@@ -268,11 +269,12 @@ def procesar_keyword(keyword):
     descripcion = crear_descripcion(keyword, estructura)
     categoria = crear_categoria(estructura)
     
+    fecha_actual = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     # Crear el contenido MDX
     resultado_mdx = f"""
 ---
 title: '{titulo}'
-date: '2024-05-21'
+date: {fecha_actual}
 tags: {categoria}
 draft: false
 summary: '{descripcion}'
